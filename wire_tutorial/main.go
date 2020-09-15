@@ -21,7 +21,7 @@ type Event struct {
 }
 
 func main(){
-        e, err := InitializeEvent()
+        e, err := InitializeEvent("hi there!")
         if err != nil {
                 fmt.Println("failed to create event: %s\n",err)
                 os.Exit(2)
@@ -36,8 +36,8 @@ func NewEvent(g Greeter) (Event, error) {
         }
 	return Event{Greeter: g}, nil
 }
-func NewMessage() Message {
-	return Message("Hi there!")
+func NewMessage(phrase string) Message {
+	return Message(phrase)
 }
 
 func NewGreeter(m Message) Greeter {
