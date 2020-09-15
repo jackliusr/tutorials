@@ -17,10 +17,16 @@ type Event struct {
 }
 
 func main(){
+	{
 	message := NewMessage()
 	greeter := NewGreeter(message)
 	event := NewEvent(greeter)
 	event.Start()
+	}
+	{
+		e := InitializeEvent()
+		e.Start()
+	}
 }
 
 func NewEvent(g Greeter) Event {
